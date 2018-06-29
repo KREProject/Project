@@ -6,6 +6,9 @@
 @prefix fabio: <http://purl.org/spar/fabio/> .
 @prefix co: <http://purl.org/co/> .
 @prefix c4o: <http://purl.org/spar/c4o> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+
 
 
 
@@ -24,13 +27,56 @@
 
 
 #FRONT MATTER: preliminary matter
-# :front-matter a doco:FrontMatter ;
-#     po:contains
-#         :title,
-#         :author,
-#         :keywords,
-#         :correspondece,
-#         :abstract;
+:front-matter a doco:FrontMatter ;
+    po:contains
+        :title,
+        :author,
+        :keywords,
+        :correspondence,
+        :abstract;
+    co:firstItem [
+        co:itemContent :title ;
+        co:nextItem [
+            co:itemContent :author ;
+            co:nextItem [
+                co:itemContent :keywords ;
+                co:nextItem [
+                    co:itemContent :correspondence ] ] ] ] .
+:title a doco:Title ;
+    c4o:hasContent "Most woodpeckers drill holes into trees to forage for insects
+                    and their larvae." .
+:author a dc:creator ;
+    co:itemContent :L_J_Gibson ;
+:keywords a co:List
+    co:item
+        :woodpeckers,
+        :pecking,
+        :brain_injury,
+        :biomechanics,
+:woodpeckers a prism:keywords ;
+    skos:prefLabel "woodpeckers" ;
+    fabio:hasDiscipline
+        dbpedia:Ornithology .
+:pecking a prism:keywords ;
+    skos:prefLabel "pecking" ;
+    fabio:hasDiscipline
+        dbpedia:Ornithology .        
+:brain_injury a prism:keywords ;
+    skos:prefLabel "brain injury" ;
+    fabio:hasDiscipline
+        dbpedia:Ornithology .
+:biomechanics a prism:keywords ;
+    skos:prefLabel "biomechanics" ;
+    fabio:hasDiscipline
+        dbpedia:Biomechanic .
+
+#AUTHOR
+:L_J_Gibson a foaf:Person ;
+    foaf:firstName "Lorna J. Gibson"
+    foaf:familyName "Gibson"
+
+
+
 
 
 
