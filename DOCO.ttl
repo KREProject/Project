@@ -65,7 +65,7 @@
 :section_introduction_title a doco:SectionTitle ;
   c4o:hasContent "Introduction" .
 
-:paragraph_1 a doco:Paragraph ;
+:paragraph_1 a doco:Paragraph;
   c4o:hasContent 
     "Most woodpeckers drill holes into trees to forage for insects
     and their larvae.
@@ -91,15 +91,58 @@
 
     With all of this drilling, excavating and drumming, how do
     woodpeckers avoid brain injury?"
-  co:contains[
-      a c4o:InTextReferencePointer
-      c4o:denotes :paragraph_1 ;
-      c4o:hasContext :bibliography_5 .
-    ]
+
+  co:contains
+    :paragraph_1_cite1 .
+
+:paragraph_1_cite1
+  a c4o:InTextReferencePointer
+  c4o:denotes :paragraph_1
+  c4o:hasContext :bibliography_5 .
+
+:paragraph_2 a doco:Paragraph;
+  c4o:hasContent 
+    "The most detailed study of woodpecker drilling behaviour remains that of May et al. (1979),
+    who made high-speed films of an acorn woodpecker Melanerpes formicivorus pecking into a tree.
+
+    (The bird, which was unable to fly as a result of injuries from a broken wing, 
+    lived in the office of a park ranger in California and would reliably peck on a tree trunk in 
+    the office when it heard the tapping of type- writer keys).
+
+    Quantitative analysis of the film images showed that the woodpecker’s head moved forward in a straight trajectory, 
+    reaching maximum speeds of roughly 6–7.5 m s􏰀1, and decelerating at about 600–1500 g on impact, in 0.5–1.0ms. 
+    
+    The entire forward trajectory took between 8 and 25 ms." .
+
+:paragraph_3 a doco:Paragraph;
+  c4o:hasContent
+    "The tolerance of the human head to impact depends on both the acceleration and the duration of that acceleration.
+
+    The Japan Head Tolerance Curve, the lower curve in Fig. 1, shows the threshold combinations of 
+    impact acceleration and duration for concussion; accelerations above the curve cause concussion 
+    whereas those below do not (Ono et al., 1980; McLean & Anderson, 1997). 
+    
+    For shorter impact durations, higher accelerations can be tolerated. 
+    
+    Note that, for a 1 ms duration impact, the threshold acceleration for concussion in humans is about 300 g: 
+    the human brain is injured at accelerations of about 1/5–1/2 of those routinely attained in repeated woodpecker drilling."
+  c4o:contains
+    :paragraph_3_cite1
+    :paragraph_3_cite2 .
+
+:paragraph_3_cite2
+    a c4o:InTextReferencePointer
+    c4o:denotes :paragraph_2
+    c4o:hasContext :bibliography_14 .
 
 :bibliography_5 a biro:BibliographicReference ;
-    dcterms:bibliographicCitation 
-      "Elphick, C., Dunning, J.B. & Sibley, D.A. (Eds). (2001). The Sibley guide to bird life and bird behavior. New York: Alfred A. Knopf." ;
-    biro:references <http://www.worldcat.org/oclc/863051110> ;
+  dcterms:bibliographicCitation 
+    "Elphick, C., Dunning, J.B. & Sibley, D.A. (Eds). (2001). The Sibley guide to bird life and bird behavior. New York: Alfred A. Knopf." ;
+  biro:references <http://www.worldcat.org/oclc/863051110> ;
 
-
+:bibliography_14 a biro:BibliographicReference ;
+  dcterms:bibliographicCitation
+    "Ono, K., Kikuchi, A., Nakamura, M., Kobayashi, H. & Nakamura, N. (1980). Human head tolerance to sagittal impact: 
+    reliable estimation deduced from experimental head injury using subhuman primates and human cadaver skulls. 
+    In Proceedings of the 24th Stapp car crash conference: 101–160. Warrendale, PA: Society of Automotive Engineers."
+  biro:references <>
