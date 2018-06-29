@@ -1,0 +1,120 @@
+@prefix : <http://www.sparontologies.net/example/> .
+@prefix doco: <http://purl.org/spar/doco/> .
+@prefix deo: <http://purl.org/spar/deo/> .
+@prefix po: <http://www.essepuntato.it/2008/12/pattern#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix co: <http://purl.org/co/> .
+@prefix c4o: <http://purl.org/spar/c4o> .
+
+
+
+
+:paper a fabio:JournalArticle ;
+    po:contains
+        :front-matter ,
+        :body-matter ,
+        :back-matter ;
+    co:firstItem [
+        co:itemContent :front-matter ;
+        co:nextItem [
+            co:itemContent :body-matter ;
+            co:nextItem [
+                co:itemContent :back-matter ] ] ] .
+
+
+#FRONT MATTER: preliminary matter
+# :front-matter a doco:FrontMatter ;
+#     po:contains
+#         :title,
+#         :author,
+#         :keywords,
+#         :correspondece,
+#         :abstract;
+
+
+
+
+
+#BODY MATTER: main portion of text
+:body-matter a doco:BodyMatter ;
+    po:contains
+        :section-introduction ,
+        :section-literature_review ,
+        :section-analysis ,
+        :section-acknowledgements ;
+    co:firstItem [
+        co:itemContent :section-introduction ;
+        co:nextItem [
+            co:itemContent :section-literature_review ;
+            co:nextItem [
+                co:itemContent :section-analysis ;
+                co:nextItem [
+                    co:itemContent :section-acknowledgements ] ] ] ] .
+
+# INTRODUCTION
+:section-introduction a doco:Section , deo:Introduction ;
+    po:containsAsHeader :section-introduction-title ;
+    po:contains
+        :paragraph-1 ,
+        :paragraph-2 ,
+        :paragraph-3 ;
+    co:firstItem [
+        co:itemContent :section-introduction-title ;
+        co:nextItem [
+            co:itemContent :paragraph-1 ;
+            co:nextItem [
+                co:itemContent :paragraph-2 ;
+                co:nextItem [
+                    co:itemContent :paragraph-3 ] ] ] ] .
+
+:section-introduction-title a doco:SectionTitle ;
+    c4o:hasContent "Introduction" .
+
+:paragraph-1 a doco:Paragraph ;
+    po:contains
+        :sentence-1 ,
+        :sentence-2 ,
+        :sentence-3 ,
+        :sentence-4 ,
+        :sentence-5 ,
+        :sentence-6 ;
+    co:firstItem [
+        co:itemContent :sentence-1 ;
+        co:nextItem [
+            co:itemContent :sentence-2 ;
+            co:nextItem [
+                co:itemContent :sentence-3 ;
+                co:nextItem [
+                    co:itemContent :sentence-4 ;
+                    co:nextItem [
+                        co:itemContent :sentence-5 ;
+                        co:nextItem [
+                            co:itemContent :sentence-6 ] ] ] ] ] ] .
+
+:sentence-1 a doco:Sentence ;
+    c4o:hasContent "Most woodpeckers drill holes into trees to forage for insects
+                    and their larvae." .
+:sentence-2 a doco:Sentence ;
+    c4o:hasContent "One group of woodpeckers, the sapsuckers,
+                    draws sap out of the holes they drill with the brush-like ends
+                    of their long tongues. " .
+:sentence-3 a doco:Sentence ;
+    c4o:hasContent "The acorn woodpecker excavates
+                    larger holes to store individual acorns; social groups of
+                    acorn woodpeckers have been known to store more than
+                    60 000 acorns, each in its individual hole, in a dead tree
+                    trunk or limb, known as a ‘granary’ (Elphick, Dunning &
+                    Sibley, 2001). " .
+:sentence-4 a doco:Sentence ;
+    c4o:hasContent "All woodpeckers excavate cavity nests with a
+                    horizontal entry leading to an enlarged opening below it to
+                    lay their eggs." .
+:sentence-5 a doco:Sentence ;
+    c4o:hasContent "Woodpeckers drum on hollow branches,
+                    beating quickly and loudly, but less forcefully than during
+                    drilling, to attract a mate or to maintain their territory. " .
+:sentence-6 a doco:Sentence ;
+    c4o:hasContent "With
+                    all of this drilling, excavating and drumming, how do
+                    woodpeckers avoid brain injury?" .                    
