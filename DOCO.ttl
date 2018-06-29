@@ -7,24 +7,22 @@
 @prefix co: <http://purl.org/co/> .
 @prefix c4o: <http://purl.org/spar/c4o> .
 
-
-
-
-:paper a fabio:JournalArticle ;
+<doi:10.1111/j.1469-7998.2006.00166.x>
+  a fabio:JournalArticle ;
     po:contains
-        :front-matter ,
-        :body-matter ,
-        :back-matter ;
+      :front_matter ,
+      :body_matter ,
+      :back_matter ;
     co:firstItem [
-        co:itemContent :front-matter ;
+      co:itemContent :front_matter ;
+      co:nextItem [
+        co:itemContent :body_matter ;
         co:nextItem [
-            co:itemContent :body-matter ;
-            co:nextItem [
-                co:itemContent :back-matter ] ] ] .
+          co:itemContent :back_matter ] ] ] .
 
 
 #FRONT MATTER: preliminary matter
-# :front-matter a doco:FrontMatter ;
+# :front_matter a doco:FrontMatter ;
 #     po:contains
 #         :title,
 #         :author,
@@ -32,89 +30,76 @@
 #         :correspondece,
 #         :abstract;
 
-
-
-
-
 #BODY MATTER: main portion of text
-:body-matter a doco:BodyMatter ;
-    po:contains
-        :section-introduction ,
-        :section-literature_review ,
-        :section-analysis ,
-        :section-acknowledgements ;
-    co:firstItem [
-        co:itemContent :section-introduction ;
+:body_matter a doco:BodyMatter ;
+  po:contains
+    :section_introduction ,
+    :section_literature_review ,
+    :section_analysis ,
+    :section_acknowledgements ;
+  co:firstItem [
+    co:itemContent :section_introduction ;
+    co:nextItem [
+      co:itemContent :section_literature_review ;
+      co:nextItem [
+        co:itemContent :section_analysis ;
         co:nextItem [
-            co:itemContent :section-literature_review ;
-            co:nextItem [
-                co:itemContent :section-analysis ;
-                co:nextItem [
-                    co:itemContent :section-acknowledgements ] ] ] ] .
+          co:itemContent :section_acknowledgements ] ] ] ] .
 
 # INTRODUCTION
-:section-introduction a doco:Section , deo:Introduction ;
-    po:containsAsHeader :section-introduction-title ;
-    po:contains
-        :paragraph-1 ,
-        :paragraph-2 ,
-        :paragraph-3 ;
-    co:firstItem [
-        co:itemContent :section-introduction-title ;
+:section_introduction a doco:Section , deo:Introduction ;
+  po:containsAsHeader :section_introduction_title ;
+  po:contains
+    :paragraph_1 ,
+    :paragraph_2 ,
+    :paragraph_3 ;
+  co:firstItem [
+    co:itemContent :section_introduction_title ;
+    co:nextItem [
+      co:itemContent :paragraph_1 ;
+      co:nextItem [
+        co:itemContent :paragraph_2 ;
         co:nextItem [
-            co:itemContent :paragraph-1 ;
-            co:nextItem [
-                co:itemContent :paragraph-2 ;
-                co:nextItem [
-                    co:itemContent :paragraph-3 ] ] ] ] .
+          co:itemContent :paragraph_3 ] ] ] ] .
 
-:section-introduction-title a doco:SectionTitle ;
-    c4o:hasContent "Introduction" .
+:section_introduction_title a doco:SectionTitle ;
+  c4o:hasContent "Introduction" .
 
-:paragraph-1 a doco:Paragraph ;
-    po:contains
-        :sentence-1 ,
-        :sentence-2 ,
-        :sentence-3 ,
-        :sentence-4 ,
-        :sentence-5 ,
-        :sentence-6 ;
-    co:firstItem [
-        co:itemContent :sentence-1 ;
-        co:nextItem [
-            co:itemContent :sentence-2 ;
-            co:nextItem [
-                co:itemContent :sentence-3 ;
-                co:nextItem [
-                    co:itemContent :sentence-4 ;
-                    co:nextItem [
-                        co:itemContent :sentence-5 ;
-                        co:nextItem [
-                            co:itemContent :sentence-6 ] ] ] ] ] ] .
+:paragraph_1 a doco:Paragraph ;
+  c4o:hasContent 
+    "Most woodpeckers drill holes into trees to forage for insects
+    and their larvae.
 
-:sentence-1 a doco:Sentence ;
-    c4o:hasContent "Most woodpeckers drill holes into trees to forage for insects
-                    and their larvae." .
-:sentence-2 a doco:Sentence ;
-    c4o:hasContent "One group of woodpeckers, the sapsuckers,
-                    draws sap out of the holes they drill with the brush-like ends
-                    of their long tongues. " .
-:sentence-3 a doco:Sentence ;
-    c4o:hasContent "The acorn woodpecker excavates
-                    larger holes to store individual acorns; social groups of
-                    acorn woodpeckers have been known to store more than
-                    60 000 acorns, each in its individual hole, in a dead tree
-                    trunk or limb, known as a ‘granary’ (Elphick, Dunning &
-                    Sibley, 2001). " .
-:sentence-4 a doco:Sentence ;
-    c4o:hasContent "All woodpeckers excavate cavity nests with a
-                    horizontal entry leading to an enlarged opening below it to
-                    lay their eggs." .
-:sentence-5 a doco:Sentence ;
-    c4o:hasContent "Woodpeckers drum on hollow branches,
-                    beating quickly and loudly, but less forcefully than during
-                    drilling, to attract a mate or to maintain their territory. " .
-:sentence-6 a doco:Sentence ;
-    c4o:hasContent "With
-                    all of this drilling, excavating and drumming, how do
-                    woodpeckers avoid brain injury?" .                    
+    One group of woodpeckers, the sapsuckers,
+    draws sap out of the holes they drill with the brush-like ends
+    of their long tongues.
+
+    The acorn woodpecker excavates
+    larger holes to store individual acorns; social groups of
+    acorn woodpeckers have been known to store more than
+    60 000 acorns, each in its individual hole, in a dead tree
+    trunk or limb, known as a ‘granary’ (Elphick, Dunning &
+    Sibley, 2001).
+
+    All woodpeckers excavate cavity nests with a
+    horizontal entry leading to an enlarged opening below it to
+    lay their eggs.
+
+    Woodpeckers drum on hollow branches,
+    beating quickly and loudly, but less forcefully than during
+    drilling, to attract a mate or to maintain their territory.
+
+    With all of this drilling, excavating and drumming, how do
+    woodpeckers avoid brain injury?"
+  co:contains[
+      a c4o:InTextReferencePointer
+      c4o:denotes :paragraph_1 ;
+      c4o:hasContext :bibliography_5 .
+    ]
+
+:bibliography_5 a biro:BibliographicReference ;
+    dcterms:bibliographicCitation 
+      "Elphick, C., Dunning, J.B. & Sibley, D.A. (Eds). (2001). The Sibley guide to bird life and bird behavior. New York: Alfred A. Knopf." ;
+    biro:references <http://www.worldcat.org/oclc/863051110> ;
+
+
