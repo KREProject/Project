@@ -35,6 +35,7 @@
         :author,
         :keywords,
         :correspondence,
+        :info,
         :abstract;
     co:firstItem [
         co:itemContent :title ;
@@ -43,7 +44,11 @@
             co:nextItem [
                 co:itemContent :keywords ;
                 co:nextItem [
-                    co:itemContent :correspondence ] ] ] ] .
+                    co:itemContent :correspondence;
+                    co:nextItem [
+                        co:itemContent :info;
+                        co:nextItem [
+                            co:itemContent :abstract;] ] ] ] ] ] .
 #TITLE
 :title a doco:Title ;
     c4o:hasContent "Woodpecker pecking: how woodpeckers avoid brain injury" .
@@ -81,6 +86,8 @@
     doco:SectionTitle "Correspondence";
     c4o:hasContent "Lorna J. Gibson, Department of Materials Science and Engineering, Massachusetts Institute of Technology, Cambridge, MA 02139, USA. Email: ljgibson@mit.edu";
     co:itemContent :L_J_Gibson, :MSE_MIT.
+#INFO
+
 #ABSTRACT
 :abstract a fabio:abstract ;
     doco:SectionTitle "Abstract";
