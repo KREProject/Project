@@ -11,6 +11,7 @@
 @prefix dbo: <http://dbpedia.org/ontology/> .
 @prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix org:  <http://www.w3.org/ns/org#> .
 
 
 
@@ -25,67 +26,89 @@
       co:nextItem [
         co:itemContent :body_matter ;
         co:nextItem [
-          co:itemContent :back_matter ] ] ] .
+          co:itemContent :back_matter ] ] ] ;
+    dcterms:creator :L_J_Gibson;
+    prism:keywords
+        :woodpeckers,
+        :pecking,
+        :brain_injury,
+        :biomechanics.
+    fabio:hasDateReceived "31 August 2005";
+    fabio:dateAccepted "23 February 2006".
 
+#KEYWORDS
+:woodpeckers skos:prefLabel "woodpeckers" ;
+    fabio:hasDiscipline
+        dbpedia:Ornithology .
+:pecking skos:prefLabel "pecking" ;
+    fabio:hasDiscipline
+        dbpedia:Ornithology .        
+:brain_injury skos:prefLabel "brain injury" ;
+    fabio:hasDiscipline
+        dbpedia:Neurosurgery .
+:biomechanics skos:prefLabel "biomechanics" ;
+    fabio:hasDiscipline
+        dbpedia:Biomechanic .
+
+#GIBSON
+:L_J_Gibson a foaf:Person ;
+    foaf:firstName "Lorna J.";
+    foaf:familyName "Gibson";
+    foaf:mbox "ljgibson@mit.edu";
+    org:memberOf :MSE_MIT.
+
+#MIT
+:MSE_MIT a foaf:Organization ;
+    foaf:name "Department of Materials Science and Engineering, Massachusetts Institute of Technology";
+    dbo:affiliation dbpedia:Massachusetts_Institute_of_Technology;
+    foaf:member :L_J_Gibson.
 
 #FRONT MATTER: preliminary matter
 :front-matter a doco:FrontMatter ;
     po:contains
         :title,
-        :author,
-        :keywords,
-        :correspondence,
-        :info,
         :abstract;
     co:firstItem [
         co:itemContent :title ;
         co:nextItem [
-            co:itemContent :author ;
-            co:nextItem [
-                co:itemContent :keywords ;
-                co:nextItem [
-                    co:itemContent :correspondence;
-                    co:nextItem [
-                        co:itemContent :info;
-                        co:nextItem [
-                            co:itemContent :abstract;] ] ] ] ] ] .
+            co:itemContent :abstract;] ] .
 #TITLE
 :title a doco:Title ;
     c4o:hasContent "Woodpecker pecking: how woodpeckers avoid brain injury" .
 #AUTHOR
-:author a dcterms:creator ;
-    c4o:hasContent 
-      "L. J. Gibson Department of Materials Science and Engineering, Massachusetts Institute of Technology, Cambridge, MA, USA";
-    co:itemContent :L_J_Gibson, :MSE_MIT .
+# :author a dcterms:creator ;
+#     c4o:hasContent 
+#       "L. J. Gibson Department of Materials Science and Engineering, Massachusetts Institute of Technology, Cambridge, MA, USA";
+#     co:itemContent :L_J_Gibson, :MSE_MIT .
 #KEYWORDS   
-:keywords a prism:keywords, co:List ;
-    doco:SectionTitle "Keywords";
-    co:Item
-        :woodpeckers,
-        :pecking,
-        :brain_injury,
-        :biomechanics.
-:woodpeckers a co:ListItem ;
-    skos:prefLabel "woodpeckers" ;
-    fabio:hasDiscipline
-        dbpedia:Ornithology .
-:pecking a co:ListItem ;
-    skos:prefLabel "pecking" ;
-    fabio:hasDiscipline
-        dbpedia:Ornithology .        
-:brain_injury a co:ListItem ;
-    skos:prefLabel "brain injury" ;
-    fabio:hasDiscipline
-        dbpedia:Neurosurgery .
-:biomechanics a co:ListItem ;
-    skos:prefLabel "biomechanics" ;
-    fabio:hasDiscipline
-        dbpedia:Biomechanic .
+# :keywords a prism:keywords, co:List ;
+#     doco:SectionTitle "Keywords";
+#     co:Item
+#         :woodpeckers,
+#         :pecking,
+#         :brain_injury,
+#         :biomechanics.
+# :woodpeckers a co:ListItem ;
+#     skos:prefLabel "woodpeckers" ;
+#     fabio:hasDiscipline
+#         dbpedia:Ornithology .
+# :pecking a co:ListItem ;
+#     skos:prefLabel "pecking" ;
+#     fabio:hasDiscipline
+#         dbpedia:Ornithology .        
+# :brain_injury a co:ListItem ;
+#     skos:prefLabel "brain injury" ;
+#     fabio:hasDiscipline
+#         dbpedia:Neurosurgery .
+# :biomechanics a co:ListItem ;
+#     skos:prefLabel "biomechanics" ;
+#     fabio:hasDiscipline
+#         dbpedia:Biomechanic .
 #CORRESPONDENCE
-:correspondence a doco:Section ;
-    doco:SectionTitle "Correspondence";
-    c4o:hasContent "Lorna J. Gibson, Department of Materials Science and Engineering, Massachusetts Institute of Technology, Cambridge, MA 02139, USA. Email: ljgibson@mit.edu";
-    co:itemContent :L_J_Gibson, :MSE_MIT.
+# :correspondence a doco:Section ;
+#     doco:SectionTitle "Correspondence";
+#     c4o:hasContent "Lorna J. Gibson, Department of Materials Science and Engineering, Massachusetts Institute of Technology, Cambridge, MA 02139, USA. Email: ljgibson@mit.edu";
+#     co:itemContent :L_J_Gibson, :MSE_MIT.
 #INFO
 
 #ABSTRACT
@@ -100,16 +123,6 @@
       the impact, which increases the tolerable acceleration; and the orientation of the
       brain within the skull, which increases the area of contact between the brain and
       the skull." .
-#GIBSON
-:L_J_Gibson a foaf:Person ;
-    foaf:firstName "Lorna J.";
-    foaf:familyName "Gibson";
-    foaf:mbox "ljgibson@mit.edu".
-#MIT
-:MSE_MIT a foaf:Organization ;
-    foaf:name "Department of Materials Science and Engineering, Massachusetts Institute of Technology";
-    dbo:affiliation dbpedia:Massachusetts_Institute_of_Technology;
-    foaf:member :L_J_Gibson.
 
 #BODY MATTER: main portion of text
 :body_matter a doco:BodyMatter ;
