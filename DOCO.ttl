@@ -8,6 +8,9 @@
 @prefix c4o: <http://purl.org/spar/c4o> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
 
 
 <doi:10.1111/j.1469-7998.2006.00166.x>
@@ -41,16 +44,15 @@
                 co:nextItem [
                     co:itemContent :correspondence ] ] ] ] .
 :title a doco:Title ;
-    c4o:hasContent "Most woodpeckers drill holes into trees to forage for insects
-                    and their larvae." .
-:author a dc:creator ;
-    co:itemContent :L_J_Gibson ;
-:keywords a co:List
+    c4o:hasContent "Woodpecker pecking: how woodpeckers avoid brain injury" .
+:author a dcterms:creator ;
+    co:itemContent :L_J_Gibson .
+:keywords a co:List ;
     co:item
         :woodpeckers,
         :pecking,
         :brain_injury,
-        :biomechanics,
+        :biomechanics.
 :woodpeckers a prism:keywords ;
     skos:prefLabel "woodpeckers" ;
     fabio:hasDiscipline
@@ -70,8 +72,8 @@
 
 #AUTHOR
 :L_J_Gibson a foaf:Person ;
-    foaf:firstName "Lorna J. Gibson"
-    foaf:familyName "Gibson"
+    foaf:firstName "Lorna J. Gibson";
+    foaf:familyName "Gibson".
 
 
 
