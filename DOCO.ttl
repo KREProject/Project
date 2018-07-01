@@ -12,7 +12,7 @@
 @prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix org:  <http://www.w3.org/ns/org#> .
-
+@prefix frbr: <http://purl.org/vocab/frbr/core> .
 
 
 <doi:10.1111/j.1469-7998.2006.00166.x>
@@ -28,14 +28,18 @@
         co:nextItem [
           co:itemContent :back_matter ] ] ] ;
     dcterms:creator :L_J_Gibson;
-    prism:keywords
+    dcterms:title "Woodpecker pecking: how woodpeckers avoid brain injury";
+    prism:alternateTitle "Woodpecker pecking";
+    prism:keyword
         :woodpeckers,
         :pecking,
         :brain_injury,
-        :biomechanics.
+        :biomechanics;
     fabio:hasDateReceived "31 August 2005";
-    fabio:dateAccepted "23 February 2006".
-
+    fabio:dateAccepted "23 February 2006";
+    prism:ISSN "ISSN 0952-8369";
+    frbr:partOf :Journal_of_Zoology_207;
+    prism:pageRange 462, 465.
 #KEYWORDS
 :woodpeckers skos:prefLabel "woodpeckers" ;
     fabio:hasDiscipline
@@ -62,6 +66,9 @@
     foaf:name "Department of Materials Science and Engineering, Massachusetts Institute of Technology";
     dbo:affiliation dbpedia:Massachusetts_Institute_of_Technology;
     foaf:member :L_J_Gibson.
+#JOURNAL_OF_ZOOLOGY
+:Journal_of_Zoology_207 a fabio:JournalIssue.
+# I can't understand exactly the string "Journal of Zoology 270 (2006) 462–465 c 2006 The Author. Journal compilation c 2006 The Zoological Society of London"
 
 #FRONT MATTER: preliminary matter
 :front-matter a doco:FrontMatter ;
@@ -75,42 +82,6 @@
 #TITLE
 :title a doco:Title ;
     c4o:hasContent "Woodpecker pecking: how woodpeckers avoid brain injury" .
-#AUTHOR
-# :author a dcterms:creator ;
-#     c4o:hasContent 
-#       "L. J. Gibson Department of Materials Science and Engineering, Massachusetts Institute of Technology, Cambridge, MA, USA";
-#     co:itemContent :L_J_Gibson, :MSE_MIT .
-#KEYWORDS   
-# :keywords a prism:keywords, co:List ;
-#     doco:SectionTitle "Keywords";
-#     co:Item
-#         :woodpeckers,
-#         :pecking,
-#         :brain_injury,
-#         :biomechanics.
-# :woodpeckers a co:ListItem ;
-#     skos:prefLabel "woodpeckers" ;
-#     fabio:hasDiscipline
-#         dbpedia:Ornithology .
-# :pecking a co:ListItem ;
-#     skos:prefLabel "pecking" ;
-#     fabio:hasDiscipline
-#         dbpedia:Ornithology .        
-# :brain_injury a co:ListItem ;
-#     skos:prefLabel "brain injury" ;
-#     fabio:hasDiscipline
-#         dbpedia:Neurosurgery .
-# :biomechanics a co:ListItem ;
-#     skos:prefLabel "biomechanics" ;
-#     fabio:hasDiscipline
-#         dbpedia:Biomechanic .
-#CORRESPONDENCE
-# :correspondence a doco:Section ;
-#     doco:SectionTitle "Correspondence";
-#     c4o:hasContent "Lorna J. Gibson, Department of Materials Science and Engineering, Massachusetts Institute of Technology, Cambridge, MA 02139, USA. Email: ljgibson@mit.edu";
-#     co:itemContent :L_J_Gibson, :MSE_MIT.
-#INFO
-
 #ABSTRACT
 :abstract a fabio:abstract ;
     doco:SectionTitle "Abstract";
