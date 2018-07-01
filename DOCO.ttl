@@ -8,6 +8,7 @@
 @prefix c4o: <http://purl.org/spar/c4o> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
 @prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
@@ -43,40 +44,65 @@
                 co:itemContent :keywords ;
                 co:nextItem [
                     co:itemContent :correspondence ] ] ] ] .
+#TITLE
 :title a doco:Title ;
     c4o:hasContent "Woodpecker pecking: how woodpeckers avoid brain injury" .
+#AUTHOR
 :author a dcterms:creator ;
-    co:itemContent :L_J_Gibson .
-:keywords a co:List ;
-    co:item
+    c4o:hasContent 
+      "L. J. Gibson Department of Materials Science and Engineering, Massachusetts Institute of Technology, Cambridge, MA, USA";
+    co:itemContent :L_J_Gibson, :MSE_MIT .
+#KEYWORDS   
+:keywords a prism:keywords, co:List ;
+    doco:SectionTitle "Keywords";
+    co:Item
         :woodpeckers,
         :pecking,
         :brain_injury,
         :biomechanics.
-:woodpeckers a prism:keywords ;
+:woodpeckers a co:ListItem ;
     skos:prefLabel "woodpeckers" ;
     fabio:hasDiscipline
         dbpedia:Ornithology .
-:pecking a prism:keywords ;
+:pecking a co:ListItem ;
     skos:prefLabel "pecking" ;
     fabio:hasDiscipline
         dbpedia:Ornithology .        
-:brain_injury a prism:keywords ;
+:brain_injury a co:ListItem ;
     skos:prefLabel "brain injury" ;
     fabio:hasDiscipline
-        dbpedia:Ornithology .
-:biomechanics a prism:keywords ;
+        dbpedia:Neurotrauma .
+:biomechanics a co:ListItem ;
     skos:prefLabel "biomechanics" ;
     fabio:hasDiscipline
         dbpedia:Biomechanic .
-
-#AUTHOR
+#CORRESPONDENCE
+:correspondence a doco:Section ;
+    doco:SectionTitle "Correspondence";
+    c4o:hasContent "Lorna J. Gibson, Department of Materials Science and Engineering, Massachusetts Institute of Technology, Cambridge, MA 02139, USA. Email: ljgibson@mit.edu";
+    co:itemContent :L_J_Gibson, :MSE_MIT.
+#ABSTRACT
+:abstract a fabio:abstract ;
+    doco:SectionTitle "Abstract";
+    c4o:hasContent 
+      "Woodpeckers are capable of repeated pecking on a tree at remarkably high
+      decelerations (on the order of 10 000 m s2 or 1000 g). In this paper, I re-examine
+      previous studies of pecking and scaling effects in brain injury. I find that there are
+      three keys to woodpeckers’ ability to withstand high decelerations: their small size,
+      which reduces the stress on the brain for a given acceleration; the short duration of
+      the impact, which increases the tolerable acceleration; and the orientation of the
+      brain within the skull, which increases the area of contact between the brain and
+      the skull." .
+#GIBSON
 :L_J_Gibson a foaf:Person ;
-    foaf:firstName "Lorna J. Gibson";
-    foaf:familyName "Gibson".
-
-
-
+    foaf:firstName "Lorna J.";
+    foaf:familyName "Gibson";
+    foaf:mbox "ljgibson@mit.edu".
+#MIT
+:MSE_MIT a foaf:Organization ;
+    foaf:name "Department of Materials Science and Engineering, Massachusetts Institute of Technology";
+    dbo:affiliation dbpedia:Massachusetts_Institute_of_Technology;
+    foaf:member :L_J_Gibson.
 
 #BODY MATTER: main portion of text
 :body_matter a doco:BodyMatter ;
@@ -93,7 +119,6 @@
         co:itemContent :section_analysis ;
         co:nextItem [
           co:itemContent :section_acknowledgements ] ] ] ] .
-
 # INTRODUCTION
 :section_introduction a doco:Section , deo:Introduction ;
   po:containsAsHeader :section_introduction_title ;
