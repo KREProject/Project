@@ -71,7 +71,7 @@
 :brain_injury a co:ListItem ;
     skos:prefLabel "brain injury" ;
     fabio:hasDiscipline
-        dbpedia:Neurotrauma .
+        dbpedia:Neurosurgery .
 :biomechanics a co:ListItem ;
     skos:prefLabel "biomechanics" ;
     fabio:hasDiscipline
