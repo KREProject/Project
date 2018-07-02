@@ -118,7 +118,6 @@
   po:contains :paragraph_1, :paragraph_2, :paragraph_3 .
 
 :paragraph_1 a doco:Paragraph;
-#Content logic
 	deo:background [
 		c40:hasContent "Most woodpeckers drill holes into trees to forage for insects and their larvae.";
 		rdf:subject "woodpeckers";
@@ -149,9 +148,8 @@
 	]
 	deo:problem statement
 		"With all of this drilling, excavating and drumming, how do
-		woodpeckers avoid brain injury?".
+		woodpeckers avoid brain injury?";
 	
-
   co:contains
   [
     a c4o:InTextReferencePointer;
@@ -160,10 +158,7 @@
   ].
 
 :paragraph_2 a doco:Paragraph;
-	c4o:hasContent :paragraph_2 .
-	
-# content logic
-:paragraph_2 owl:Thing  
+	:paragraph_2 owl:Thing  
 	dc:description 
 	    "The most detailed study of woodpecker drilling behaviour remains that of May et al. (1979),
 		who made high-speed films of an acorn woodpecker Melanerpes formicivorus pecking into a tree.
@@ -190,7 +185,7 @@
   [
     a c4o:InTextReferencePointer;
     c4o:denotes :paragraph_2;
-    c4o:hasContext :bibliography_14 .
+    c4o:hasContext :bibliography_14.
   ];
   c4o:isRelevantTo:paragraph_1, :paragraph_2;
   amo:hasEvidence  
@@ -201,6 +196,160 @@
     Note that, for a 1 ms duration impact, the threshold acceleration for concussion in humans is about 300 g: 
     the human brain is injured at accelerations of about 1/5–1/2 of those routinely attained in repeated woodpecker drilling.".
 
+
+ Literature review
+:section_Literature review
+  a doco:Section, deo:Literature review ;
+  dc:title "Literature review";
+  po:contains :paragraph_4, :paragraph_5, :paragraph_6, :paragraph_7, :paragraph_8.
+
+:paragraph_4 a doco: Paragraph;
+	 po:contains :sentence1, sentence2, sentence3, sentence4, sentence5, figure1.
+	
+#sentences_p4	
+:sentence1 dc:description "A number of suggestions have been made to explain the
+			ability of woodpeckers to withstand the repeated impacts
+			from drilling."; 
+		c4o:isRelevantTo :paragraph_3.
+:sentence2 dc:description "The classic argument made in the ornithology
+			literature focuses on an unusual feature of birds: cranial
+			kinesis, or the ability to move the upper portion of the beak
+			relative to the brain case.";
+		amo:hasWarrant: sentence2;
+		prism:keyword_p4 :cranial kinesis,
+:sentence3 dc:description "Bock (1964, 1966, 1999a,b) used a
+			static analysis of the anatomical features of birds that give
+			rise to cranial kinesis to show that, during pecking, the force
+			of the impact is directed away from the dorsal portion of the
+			brain case (which is lightly constructed) and towards the
+			ventral base of the brain case (which consists of more
+			massive bone), so that the brain itself is protected from the
+			impact.";
+		c4o:hasContext :bibliography_1, bibliography_2, bibliography_3, bibliography_4.
+:sentence4 dc:description "This analysis appears to miss the dynamic effect: the
+			brain itself accelerates during the impact." ;
+		deo:hasRelation :sentence3.
+:sentence5 dc:description "Bock (1999a) does
+			note that the brain may move forward and hit the inner wall
+			of the skull if it is not firmly anchored in some way, possibly
+			causing brain injury, and that there is little information on
+			the morphological relationship of the brain to the brain
+			case.";
+		c4o:hasContext :bibliography_3.
+figure1: dc:description "Figure 1 Tolerance curves for human and acorn woodpecker Melanerpes
+			formicivorus head impact. The lower curve gives the threshold
+			acceleration for concussion in humans and is adapted from Ono et al.
+			(1980); accelerations below the curve can be tolerated without brain
+			injury. The upper curve, for acorn woodpecker head impact, is
+			obtained using the scaling relationship equation (3). The duration of
+			human head impacts in accidents is typically 3–15 ms, corresponding
+			to tolerable accelerations of 80 g to 160 g. The duration of acorn
+			woodpecker head impacts has been measured to be 0.5–1.0 ms (May
+			et al., 1979), suggesting that acorn woodpeckers can tolerate impact
+			accelerations of 4600 g to 6000 g, well in excess of measured values
+			of 634 g to 1525 g";
+		amo:hasWarrant [:paragraph_4,sentence5;]
+		prism:keyword_p4 :Tolerable acceleration, Tolerance curves;
+		c4o:hasContext :bibliography_14, :bibliography_7.
+
+#KEYWORDS_p4
+:cranial kinesis
+  skos:prefLabel "cranial kinesis" ;
+  fabio:hasDiscipline dbpedia:Neurosurgery .	
+  
+:Tolerable acceleration
+  skos:prefLabel "Tolerable acceleration" ;
+  fabio:hasDiscipline dbpedia:Mathematics .		
+  
+:Tolerance curves	
+  skos:prefLabel "Tolerance curves" ;
+  fabio:hasDiscipline dbpedia:Mathematics .
+  
+
+:paragraph_5 a doco: Paragraph;
+    c40:hasContent "Simple scaling arguments indicate that small size is an
+		advantage: as brain size decreases, the ratio of the brain
+		mass to surface area decreases (assuming that the brain
+		tissue density is similar across species), reducing the stress
+		on the brain tissue associated with a given acceleration (May
+		et al., 1979; Winkler, Christie & Nurney, 1995). I examine
+		the scaling argument in more detail below.";
+	c4o:hasContext :bibliography_18, :bibliography_7.
+	
+:paragraph_6 a doco: Paragraph;
+	po:contains :sentence6, sentence7, sentence8, sentence9;
+	deo:hasRelation :paragraph_5.
+
+:sentence6 dc:description
+			"The centripetal theory of concussion suggests that rotational,
+			rather than translational, accelerations produce concussion
+			(Holbourn, 1943; Ommaya et al., 1967; Ommaya &
+			Hirsch, 1971), leading May et al. (1979) to argue that the
+			straight-line trajectory protects the woodpecker from injury.";
+		c4o:hasContext :bibliography_6, :bibliography_7, :bibliography_12, :bibliography_13;
+		amo:hasClaim :sentence6.		
+:sentence7 dc:description	
+			"However, later studies demonstrated that translational accelerations
+			in non-human primates also lead to concussion
+			(Ono et al., 1980)." 
+        c4o:hasContext :bibliography_14.
+:sentence8 dc:description	
+			"In addition, the centripetal model predicts
+			a progression of injury from cortex to subcortex to brain
+			stem that does not always correspond to clinical observations
+			of concussion (Shaw, 2002).";
+		deo:hasRelation :sentence6;
+		c4o:hasContext :bibliography_11.		
+:sentence9 dc:description	
+			"In light of these observations,
+			the centripetal theory of concussion is no longer
+			thought to be valid so that May’s argument, that the straight
+			trajectory prevents brain injury in woodpeckers, is doubtful.";
+		deo:hasRelation :sentence6, sentence8.
+			
+:paragraph_7 a doco: Paragraph;
+	c40:hasContent "The convulsive theory proposes that concussion occurs
+		when mechanical stresses produce depolarization in neurons.
+		The brain of the woodpecker is tightly packed within
+		the skull, and there is relatively little cerebrospinal fluid
+		(May et al., 1976). Shaw (2002) has proposed that the
+		woodpecker avoids injury through the tight packing of the
+		brain in the skull, which he suggests prevents rotation and
+		mechanical stressing of the brain within the skull.";
+	prism:keyword_p7 :convulsive theory, cerebrospinal fluid;
+	c4o:hasContext :bibliography_11, :bibliography_8.
+
+#KEYWORDS_p7
+:convulsive theory
+  skos:prefLabel "convulsive theory" ;
+  fabio:hasDiscipline dbpedia:Neurosurgery.
+  
+:cerebrospinal fluid
+  skos:prefLabel "cerebrospinal fluid" ;
+  fabio:hasDiscipline dbpedia:Neurosurgery .  
+  	
+
+:paragraph_8 a doco: Paragraph;
+	po:contains :sentence10, sentence11;
+
+:sentence10 dc:description	
+			"Various shock absorption mechanisms, involving the
+			muscles attached at the rear end of the mandible (Bock,
+			1964; Spring, 1965; May et al., 1976) or those connected to
+			the tongue, which wraps around the back of the head (May
+			et al., 1976), have been proposed.";
+		c4o:hasContext :bibliography_17, :bibliography_8, :bibliography_1;
+		amo:hasWarrantIn :sentence11.
+:sentence11 dc:description
+			" Yet all of these suffer from
+			the difficulty that such shock absorption mechanisms work
+			by increasing the duration of the impact, decreasing the
+			force and, consequently, the efficiency of drilling (Bock,
+			1999a).";
+		c40:hasContext :bibliography_3;
+		amo:hasClaim :sentence11.
+		
+	
 # Elements (figures)
 :figure_1 
   a doco:FigureBox;
