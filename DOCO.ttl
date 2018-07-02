@@ -257,7 +257,7 @@
 :bibliography_10
   a biro:BibliographicReference;
   dcterms:bibliographicCitation "Mlikovsky, J. (1989). Brain size in birds: 3. Columbiformes through Piciformes. Vestn. Cesk. Spol. Zool. 53, 252–264.";
-  biro:references <>.
+  biro:references <https://eurekamag.com/research/007/069/007069293.php>.
 
 :bibliography_11
   a biro:BibliographicReference;
