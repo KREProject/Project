@@ -12,46 +12,36 @@
 @prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-
-
 <doi:10.1111/j.1469-7998.2006.00166.x>
   a fabio:JournalArticle ;
     po:contains
       :front_matter ,
       :body_matter ,
-      :back_matter ;
-    co:firstItem [
-      co:itemContent :front_matter ;
-      co:nextItem [
-        co:itemContent :body_matter ;
-        co:nextItem [
-          co:itemContent :back_matter ] ] ] .
+      :back_matter ,
+
+  # Metadata here
+  dc:title "Woodpecker pecking: how woodpeckers avoid brain injury",
+  dcterms:creator :L_J_Gibson
 
 
 #FRONT MATTER: preliminary matter
 :front-matter a doco:FrontMatter ;
-    po:contains
-        :title,
-        :author,
-        :keywords,
-        :correspondence,
-        :abstract;
-    co:firstItem [
-        co:itemContent :title ;
-        co:nextItem [
-            co:itemContent :author ;
-            co:nextItem [
-                co:itemContent :keywords ;
-                co:nextItem [
-                    co:itemContent :correspondence ] ] ] ] .
+  po:contains
+    :title,
+    :author,
+    :keywords,
+    :correspondence,
+    :abstract.
+
 #TITLE
 :title a doco:Title ;
-    c4o:hasContent "Woodpecker pecking: how woodpeckers avoid brain injury" .
+  c4o:hasContent  .
+
 #AUTHOR
 :author a dcterms:creator ;
-    c4o:hasContent 
-      "L. J. Gibson Department of Materials Science and Engineering, Massachusetts Institute of Technology, Cambridge, MA, USA";
+    c4o:hasContent "L. J. Gibson Department of Materials Science and Engineering, Massachusetts Institute of Technology, Cambridge, MA, USA";
     co:itemContent :L_J_Gibson, :MSE_MIT .
+
 #KEYWORDS   
 :keywords a prism:keywords, co:List ;
     doco:SectionTitle "Keywords";
@@ -62,25 +52,29 @@
         :biomechanics.
 :woodpeckers a co:ListItem ;
     skos:prefLabel "woodpeckers" ;
-    fabio:hasDiscipline
-        dbpedia:Ornithology .
+    fabio:hasDiscipline dbpedia:Ornithology .
+
 :pecking a co:ListItem ;
     skos:prefLabel "pecking" ;
     fabio:hasDiscipline
-        dbpedia:Ornithology .        
+        dbpedia:Ornithology . 
+
 :brain_injury a co:ListItem ;
     skos:prefLabel "brain injury" ;
     fabio:hasDiscipline
         dbpedia:Neurosurgery .
+
 :biomechanics a co:ListItem ;
     skos:prefLabel "biomechanics" ;
     fabio:hasDiscipline
         dbpedia:Biomechanic .
+
 #CORRESPONDENCE
 :correspondence a doco:Section ;
     doco:SectionTitle "Correspondence";
     c4o:hasContent "Lorna J. Gibson, Department of Materials Science and Engineering, Massachusetts Institute of Technology, Cambridge, MA 02139, USA. Email: ljgibson@mit.edu";
     co:itemContent :L_J_Gibson, :MSE_MIT.
+
 #ABSTRACT
 :abstract a fabio:abstract ;
     doco:SectionTitle "Abstract";
