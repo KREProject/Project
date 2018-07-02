@@ -75,43 +75,12 @@
   skos:prefLabel "biomechanics" ;
   fabio:hasDiscipline dbpedia:Biomechanic .
 
-#GIBSON
-:L_J_Gibson 
-  a foaf:Person ;
-  foaf:firstName "Lorna J.";
-  foaf:familyName "Gibson";
-  foaf:gender "Female";
-  foaf:mbox "ljgibson@mit.edu";
-  org:memberOf :MSE_MIT.
-
-#MIT
-:MSE_MIT 
-  a foaf:Organization ;
-  foaf:name "Department of Materials Science and Engineering, Massachusetts Institute of Technology";
-  dbo:affiliation dbpedia:Massachusetts_Institute_of_Technology;
-  foaf:member :L_J_Gibson.
-
-#Zoological society london
-:ZSL 
-  a foaf:Organization;
-  skos:sameAs <http://sv.dbpedia.org/page/Zoological_Society_of_London>;
-  foaf:name "The Zoological Society of London".
-
-#JOURNAL_OF_ZOOLOGY
-:Journal_of_Zoology_270 
-  a fabio:JournalIssue;
-  dcterms:title "Journal of Zoology";
-  fabio:issueIdentifier "270"^^rdf:value;
-  fabio:publicationDate "2006"^^xsd:gYear;
-  fabio:hasCopyrightYear "2006"^^xsd:gYear;
-  dcterms:publisher :ZSL.
-
 #BODY MATTER: main portion of text
 :body 
   a doco:BodyMatter;
   po:contains :section_introduction, :section_literature_review, :section_analysis, :section_acknowledgements.
 
- INTRODUCTION
+#INTRODUCTION
 :section_introduction 
   a doco:Section, deo:Introduction ;
   dc:title "Introduction";
@@ -363,6 +332,102 @@ figure1: dc:description "Figure 1 Tolerance curves for human and acorn woodpecke
     c4o:denotes :figure_1;
     c4o:hasContext :bibliography_7
   ].
+
+:section_acknowledgements 
+  a deo:acknowledgements;
+  dc:title "Acknowledgements";
+  po:contains [
+    a doco:ListOfContributors;
+    po:contains :Trey_Crisco, :Sharon_Swartz, :Andy_Biewener, :Matt_Dawson, :Jeremiah_Trimble.
+  ]
+
+#Authors/ Contributors/ Affiliations
+:L_J_Gibson 
+  a foaf:Person ;
+  foaf:firstName "Lorna J.";
+  foaf:familyName "Gibson";
+  foaf:gender "Female";
+  foaf:mbox "ljgibson@mit.edu";
+  org:memberOf :MSE_MIT.
+
+:Trey_Crisco 
+  a foaf:Person;
+  foaf:firstName "Trey";
+  foaf:familyName "Crisco".
+  org:memberOf :DO_BU.
+
+:Sharon_Swartz
+  a foaf:Person;
+  foaf:firstName "Sharon";
+  foaf:familyName "Swartz".
+  org:memberOf :EEB_BU.
+
+:Andy_Biewener
+  a foaf:Person;
+  foaf:firstName "Andy";
+  foaf:familyName "Biewener".
+  org:memberOf :OEB_HU.
+
+:Matt_Dawson
+  a foaf:Person;
+  foaf:firstName "Matt";
+  foaf:familyName "Dawson".
+
+:Jeremiah_Trimble
+  a foaf:Person;
+  foaf:firstName "Sharon";
+  foaf:familyName "Swartz".
+  org:memberOf :ODMCZ_HU.
+
+#EEB_BU
+:EEB_BU
+  a foaf:Organization ;
+  foaf:name "Department of Ecology and Evolutionary Biology, Brown University";
+  dbo:affiliation dbpedia:Brown_University;
+  foaf:member :Sharon_Swartz.
+
+#DO_BU
+:DO_BU
+  a foaf:Organization ;
+  foaf:name "Department of Orthopaedics, Brown University";
+  dbo:affiliation dbpedia:Brown_University;
+  foaf:member :Trey_Crisco.
+
+#OEB_HU
+:OEB_HU
+  a foaf:Organization ;
+  foaf:name "Department of Organismic and Evolutionary Biology, Harvard University";
+  dbo:affiliation dbpedia:Harvard_University;
+  foaf:member :Andy_Biewener.
+
+  #ODMCZ_HU
+:ODMCZ_HU
+  a foaf:Organization ;
+  foaf:name "Ornithology Department of the Museum of Comparative Zoology, Harvard University";
+  dbo:affiliation dbpedia:Harvard_University;
+  foaf:member :Jeremiah_Trimble.
+
+#MSE_MIT
+:MSE_MIT 
+  a foaf:Organization ;
+  foaf:name "Department of Materials Science and Engineering, Massachusetts Institute of Technology";
+  dbo:affiliation dbpedia:Massachusetts_Institute_of_Technology;
+  foaf:member :L_J_Gibson.
+
+#Zoological society london
+:ZSL 
+  a foaf:Organization;
+  skos:sameAs <http://sv.dbpedia.org/page/Zoological_Society_of_London>;
+  foaf:name "The Zoological Society of London".
+
+#JOURNAL_OF_ZOOLOGY
+:Journal_of_Zoology_270 
+  a fabio:JournalIssue;
+  dcterms:title "Journal of Zoology";
+  fabio:issueIdentifier "270"^^rdf:value;
+  fabio:publicationDate "2006"^^xsd:gYear;
+  fabio:hasCopyrightYear "2006"^^xsd:gYear;
+  dcterms:publisher :ZSL.
 
 # Bibliographies
 :back_matter
