@@ -23,6 +23,14 @@
   dc:title "Woodpecker pecking: how woodpeckers avoid brain injury",
   dcterms:creator :L_J_Gibson
 
+#MIT
+:MSE_MIT a foaf:Organization ;
+    foaf:name "Department of Materials Science and Engineering, Massachusetts Institute of Technology";
+    dbo:affiliation dbpedia:Massachusetts_Institute_of_Technology;
+    foaf:member :L_J_Gibson.
+#JOURNAL_OF_ZOOLOGY
+:Journal_of_Zoology_207 a fabio:JournalIssue.
+# I can't understand exactly the string "Journal of Zoology 270 (2006) 462–465 c 2006 The Author. Journal compilation c 2006 The Zoological Society of London"
 
 #FRONT MATTER: preliminary matter
 :front-matter a doco:FrontMatter ;
@@ -87,16 +95,6 @@
       the impact, which increases the tolerable acceleration; and the orientation of the
       brain within the skull, which increases the area of contact between the brain and
       the skull." .
-#GIBSON
-:L_J_Gibson a foaf:Person ;
-    foaf:firstName "Lorna J.";
-    foaf:familyName "Gibson";
-    foaf:mbox "ljgibson@mit.edu".
-#MIT
-:MSE_MIT a foaf:Organization ;
-    foaf:name "Department of Materials Science and Engineering, Massachusetts Institute of Technology";
-    dbo:affiliation dbpedia:Massachusetts_Institute_of_Technology;
-    foaf:member :L_J_Gibson.
 
 #BODY MATTER: main portion of text
 :body_matter a doco:BodyMatter ;
