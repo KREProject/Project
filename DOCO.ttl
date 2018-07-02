@@ -209,6 +209,13 @@
   ].
 
 # Bibliographies
+:back_matter
+  a doco:BackMatter, doco:Bibliography;
+  po:contains :biblio_list.
+  
+:biblio_list a doco:BibliographicReferenceList
+  po:contains :bibliography_1, :bibliography_2, :bibliography_3, :bibliography_4, :bibliography_5, :bibliography_6, :bibliography_7, :bibliography_8, :bibliography_9, :bibliography_10, :bibliography_11, :bibliography_12, :bibliography_13, :bibliography_14, :bibliography_15, :bibliography_16, :bibliography_17, :bibliography_18; 
+
 :bibliography_1
   a biro:BibliographicReference;
   dcterms:bibliographicCitation "Bock, W.J. (1964). Kinetics of the avian skull. J. Morph. 114, 1–42.";
