@@ -75,43 +75,12 @@
   skos:prefLabel "biomechanics" ;
   fabio:hasDiscipline dbpedia:Biomechanic .
 
-#GIBSON
-:L_J_Gibson 
-  a foaf:Person ;
-  foaf:firstName "Lorna J.";
-  foaf:familyName "Gibson";
-  foaf:gender "Female";
-  foaf:mbox "ljgibson@mit.edu";
-  org:memberOf :MSE_MIT.
-
-#MIT
-:MSE_MIT 
-  a foaf:Organization ;
-  foaf:name "Department of Materials Science and Engineering, Massachusetts Institute of Technology";
-  dbo:affiliation dbpedia:Massachusetts_Institute_of_Technology;
-  foaf:member :L_J_Gibson.
-
-#Zoological society london
-:ZSL 
-  a foaf:Organization;
-  skos:sameAs <http://sv.dbpedia.org/page/Zoological_Society_of_London>;
-  foaf:name "The Zoological Society of London".
-
-#JOURNAL_OF_ZOOLOGY
-:Journal_of_Zoology_270 
-  a fabio:JournalIssue;
-  dcterms:title "Journal of Zoology";
-  fabio:issueIdentifier "270"^^rdf:value;
-  fabio:publicationDate "2006"^^xsd:gYear;
-  fabio:hasCopyrightYear "2006"^^xsd:gYear;
-  dcterms:publisher :ZSL.
-
 #BODY MATTER: main portion of text
 :body 
   a doco:BodyMatter;
   po:contains :section_introduction, :section_literature_review, :section_analysis, :section_acknowledgements.
 
- INTRODUCTION
+#INTRODUCTION
 :section_introduction 
   a doco:Section, deo:Introduction ;
   dc:title "Introduction";
@@ -214,6 +183,61 @@
     c4o:denotes :figure_1;
     c4o:hasContext :bibliography_7
   ].
+
+:section_acknowledgements 
+  a deo:acknowledgements;
+  dc:title "Acknowledgements";
+  po:contains [
+    a doco:ListOfContributors;
+    po:contains Trey_Crisco, Sharon_Swartz
+  ]
+
+#Authors/ Contributors/ Affiliations
+:L_J_Gibson 
+  a foaf:Person ;
+  foaf:firstName "Lorna J.";
+  foaf:familyName "Gibson";
+  foaf:gender "Female";
+  foaf:mbox "ljgibson@mit.edu";
+  org:memberOf :MSE_MIT.
+
+:Trey_Crisco 
+  a foaf:Person;
+  foaf:firstName "Trey";
+  foaf:familyName "Crisco".
+
+:Sharon_Swartz
+  a foaf:Person;
+  foaf:firstName "Sharon";
+  foaf:familyName "Swartz".
+
+:EEB
+  a foaf:Organization ;
+  foaf:name "Department of Ecology and Evolutionary Biology, Brown University";
+  dbo:affiliation <http://dbpedia.org/page/Brown_University>;
+  foaf:member :Trey_Crisco, .Sharon_Swartz.
+
+#MIT
+:MSE_MIT 
+  a foaf:Organization ;
+  foaf:name "Department of Materials Science and Engineering, Massachusetts Institute of Technology";
+  dbo:affiliation dbpedia:Massachusetts_Institute_of_Technology;
+  foaf:member :L_J_Gibson.
+
+#Zoological society london
+:ZSL 
+  a foaf:Organization;
+  skos:sameAs <http://sv.dbpedia.org/page/Zoological_Society_of_London>;
+  foaf:name "The Zoological Society of London".
+
+#JOURNAL_OF_ZOOLOGY
+:Journal_of_Zoology_270 
+  a fabio:JournalIssue;
+  dcterms:title "Journal of Zoology";
+  fabio:issueIdentifier "270"^^rdf:value;
+  fabio:publicationDate "2006"^^xsd:gYear;
+  fabio:hasCopyrightYear "2006"^^xsd:gYear;
+  dcterms:publisher :ZSL.
 
 # Bibliographies
 :back_matter
