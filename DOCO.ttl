@@ -114,17 +114,13 @@
  INTRODUCTION
 :section_introduction 
   a doco:Section, deo:Introduction ;
-  po:containsAsHeader :section_introduction_title ;
+  dc:title "Introduction";
   po:contains :paragraph_1, :paragraph_2, :paragraph_3 .
-:section_introduction_title a doco:SectionTitle ;
-  c4o:hasContent "Introduction" .
 
 :paragraph_1 a doco:Paragraph;
 #Content logic
-	deo:background 
-	[
-		c40:hasContent "Most woodpeckers drill holes into trees to forage for insects
-			and their larvae.";
+	deo:background [
+		c40:hasContent "Most woodpeckers drill holes into trees to forage for insects and their larvae.";
 		rdf:subject "woodpeckers";
 		rdf:predicate "forage";
 		rdf:object "insects","larvea";
