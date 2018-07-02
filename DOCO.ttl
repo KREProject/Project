@@ -189,7 +189,7 @@
   dc:title "Acknowledgements";
   po:contains [
     a doco:ListOfContributors;
-    po:contains Trey_Crisco, Sharon_Swartz
+    po:contains :Trey_Crisco, :Sharon_Swartz, :Andy_Biewener, :Matt_Dawson, :Jeremiah_Trimble.
   ]
 
 #Authors/ Contributors/ Affiliations
@@ -205,19 +205,60 @@
   a foaf:Person;
   foaf:firstName "Trey";
   foaf:familyName "Crisco".
+  org:memberOf :DO_BU.
 
 :Sharon_Swartz
   a foaf:Person;
   foaf:firstName "Sharon";
   foaf:familyName "Swartz".
+  org:memberOf :EEB_BU.
 
-:EEB
+:Andy_Biewener
+  a foaf:Person;
+  foaf:firstName "Andy";
+  foaf:familyName "Biewener".
+  org:memberOf :OEB_HU.
+
+:Matt_Dawson
+  a foaf:Person;
+  foaf:firstName "Matt";
+  foaf:familyName "Dawson".
+
+:Jeremiah_Trimble
+  a foaf:Person;
+  foaf:firstName "Sharon";
+  foaf:familyName "Swartz".
+  org:memberOf :ODMCZ_HU.
+
+#EEB_BU
+:EEB_BU
   a foaf:Organization ;
   foaf:name "Department of Ecology and Evolutionary Biology, Brown University";
-  dbo:affiliation <http://dbpedia.org/page/Brown_University>;
-  foaf:member :Trey_Crisco, .Sharon_Swartz.
+  dbo:affiliation dbpedia:Brown_University;
+  foaf:member :Sharon_Swartz.
 
-#MIT
+#DO_BU
+:DO_BU
+  a foaf:Organization ;
+  foaf:name "Department of Orthopaedics, Brown University";
+  dbo:affiliation dbpedia:Brown_University;
+  foaf:member :Trey_Crisco.
+
+#OEB_HU
+:OEB_HU
+  a foaf:Organization ;
+  foaf:name "Department of Organismic and Evolutionary Biology, Harvard University";
+  dbo:affiliation dbpedia:Harvard_University;
+  foaf:member :Andy_Biewener.
+
+  #ODMCZ_HU
+:ODMCZ_HU
+  a foaf:Organization ;
+  foaf:name "Ornithology Department of the Museum of Comparative Zoology, Harvard University";
+  dbo:affiliation dbpedia:Harvard_University;
+  foaf:member :Jeremiah_Trimble.
+
+#MSE_MIT
 :MSE_MIT 
   a foaf:Organization ;
   foaf:name "Department of Materials Science and Engineering, Massachusetts Institute of Technology";
