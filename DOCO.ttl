@@ -13,9 +13,9 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix org:  <http://www.w3.org/ns/org#> .
 @prefix frbr: <http://purl.org/vocab/frbr/core> .
+@prefix cito: <http://purl.org/spar/cito/2018-02-16> .
 
-<doi:10.1111/j.1469-7998.2006.00166.x>
-  a fabio:JournalArticle ;
+<doi:10.1111/j.1469-7998.2006.00166.x> a fabio:JournalArticle ;
     po:contains
       :front_matter ,
       :body_matter ,
@@ -109,30 +109,15 @@
     :section_introduction ,
     :section_literature_review ,
     :section_analysis ,
-    :section_acknowledgements ;
-  co:firstItem [
-    co:itemContent :section_introduction ;
-    co:nextItem [
-      co:itemContent :section_literature_review ;
-      co:nextItem [
-        co:itemContent :section_analysis ;
-        co:nextItem [
-          co:itemContent :section_acknowledgements ] ] ] ] .
+    :section_acknowledgements.
+
 # INTRODUCTION
 :section_introduction a doco:Section , deo:Introduction ;
   po:containsAsHeader :section_introduction_title ;
   po:contains
     :paragraph_1 ,
     :paragraph_2 ,
-    :paragraph_3 ;
-  co:firstItem [
-    co:itemContent :section_introduction_title ;
-    co:nextItem [
-      co:itemContent :paragraph_1 ;
-      co:nextItem [
-        co:itemContent :paragraph_2 ;
-        co:nextItem [
-          co:itemContent :paragraph_3 ] ] ] ] .
+    :paragraph_3 .
 
 :section_introduction_title a doco:SectionTitle ;
   c4o:hasContent "Introduction" .
@@ -167,11 +152,6 @@
   co:contains
     :paragraph_1_cite1 .
 
-:paragraph_1_cite1
-  a c4o:InTextReferencePointer
-  c4o:denotes :paragraph_1
-  c4o:hasContext :bibliography_5 .
-
 :paragraph_2 a doco:Paragraph;
   c4o:hasContent 
     "The most detailed study of woodpecker drilling behaviour remains that of May et al. (1979),
@@ -197,15 +177,39 @@
     For shorter impact durations, higher accelerations can be tolerated. 
     
     Note that, for a 1 ms duration impact, the threshold acceleration for concussion in humans is about 300 g: 
-    the human brain is injured at accelerations of about 1/5–1/2 of those routinely attained in repeated woodpecker drilling."
-  c4o:contains
-    :paragraph_3_cite1
-    :paragraph_3_cite2 .
+    the human brain is injured at accelerations of about 1/5–1/2 of those routinely attained in repeated woodpecker drilling.";
+  po:contains
+    :paragraph_3_cite1;
+    :paragraph_3_cite2.
 
-:paragraph_3_cite2
-    a c4o:InTextReferencePointer
-    c4o:denotes :paragraph_2
-    c4o:hasContext :bibliography_14 .
+:figure_1 a doco:FigureBox;
+  dc:description 
+    "Tolerance curves for human and acorn woodpecker Melanerpes formicivorus head impact. 
+    The lower curve gives the threshold acceleration for concussion in humans and is adapted from Ono et al. (1980); 
+    accelerations below the curve can be tolerated without brain injury. 
+    The upper curve, for acorn woodpecker head impact, is obtained using the scaling relationship equation (3). 
+    The duration of human head impacts in accidents is typically 3–15 ms, corresponding to tolerable accelerations of 80g to 160g. 
+    The duration of acorn woodpecker head impacts has been measured to be 0.5–1.0 ms (May et al., 1979), 
+    suggesting that acorn woodpeckers can tolerate impact accelerations of 4600 g to 6000 g, 
+    well in excess of measured values of 634 g to 1525 g.";
+  po:contains 
+  [
+    a: c4o:InTextReferencePointer;
+    c4o:denotes :figure_1;
+    c4o:hasContext :bibliography_14
+  ].
+
+:paragraph_1_cite1 a c4o:InTextReferencePointer;
+  c4o:denotes :paragraph_1;
+  c4o:hasContext :bibliography_5 .
+
+:paragraph_3_cite1 a cito:selfCitation;
+  cito:citesAsEvidence :figure_1;
+  c4o:hasContext :figure_1.
+
+:paragraph_3_cite2 a c4o:InTextReferencePointer;
+  c4o:denotes :paragraph_2;
+  c4o:hasContext :bibliography_14 .
 
 :bibliography_5 a biro:BibliographicReference ;
   dcterms:bibliographicCitation 
@@ -216,5 +220,5 @@
   dcterms:bibliographicCitation
     "Ono, K., Kikuchi, A., Nakamura, M., Kobayashi, H. & Nakamura, N. (1980). Human head tolerance to sagittal impact: 
     reliable estimation deduced from experimental head injury using subhuman primates and human cadaver skulls. 
-    In Proceedings of the 24th Stapp car crash conference: 101–160. Warrendale, PA: Society of Automotive Engineers."
-  biro:references <>
+    In Proceedings of the 24th Stapp car crash conference: 101–160. Warrendale, PA: Society of Automotive Engineers.";
+  biro:references <https://www.jstor.org/stable/44632635>
