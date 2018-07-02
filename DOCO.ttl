@@ -44,7 +44,7 @@
   
   fabio:hasPublicationYear "2006"^^xsd:gYear;
 
-  prism:pageRange 462, 465;
+  prism:pageRange [prism:startingPage 462; prism:endingPage 465; ] ;
 
   prism:doi "10.1111/j.1469-7998.2006.00166.x";
 
