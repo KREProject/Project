@@ -14,60 +14,68 @@
 @prefix org:  <http://www.w3.org/ns/org#> .
 @prefix frbr: <http://purl.org/vocab/frbr/core> .
 
-
 <doi:10.1111/j.1469-7998.2006.00166.x>
   a fabio:JournalArticle ;
     po:contains
       :front_matter ,
       :body_matter ,
       :back_matter ;
-    co:firstItem [
-      co:itemContent :front_matter ;
-      co:nextItem [
-        co:itemContent :body_matter ;
-        co:nextItem [
-          co:itemContent :back_matter ] ] ] ;
-    dcterms:creator :L_J_Gibson;
-    dcterms:title "Woodpecker pecking: how woodpeckers avoid brain injury";
-    prism:alternateTitle "Woodpecker pecking";
-    prism:keyword
-        :woodpeckers,
-        :pecking,
-        :brain_injury,
-        :biomechanics;
-    fabio:hasDateReceived "31 August 2005";
-    fabio:dateAccepted "23 February 2006";
-    prism:ISSN "ISSN 0952-8369";
-    frbr:partOf :Journal_of_Zoology_207;
-    prism:pageRange 462, 465.
+
+  dcterms:creator :L_J_Gibson;
+
+  dcterms:title "Woodpecker pecking: how woodpeckers avoid brain injury";
+
+  prism:alternateTitle "Woodpecker pecking";
+
+  prism:keyword
+    :woodpeckers,
+    :pecking,
+    :brain_injury,
+    :biomechanics;
+
+  fabio:hasDateReceived "31 August 2005";
+
+  fabio:dateAccepted "23 February 2006";
+
+  prism:ISSN "ISSN 0952-8369";
+
+  frbr:partOf :Journal_of_Zoology_207;
+  
+  prism:pageRange 462, 465.
+
 #KEYWORDS
 :woodpeckers skos:prefLabel "woodpeckers" ;
-    fabio:hasDiscipline
-        dbpedia:Ornithology .
+  fabio:hasDiscipline dbpedia:Ornithology .
+
 :pecking skos:prefLabel "pecking" ;
-    fabio:hasDiscipline
-        dbpedia:Ornithology .        
+  fabio:hasDiscipline dbpedia:Ornithology .
+
 :brain_injury skos:prefLabel "brain injury" ;
-    fabio:hasDiscipline
-        dbpedia:Neurosurgery .
+  fabio:hasDiscipline dbpedia:Neurosurgery .
+
 :biomechanics skos:prefLabel "biomechanics" ;
-    fabio:hasDiscipline
-        dbpedia:Biomechanic .
+  fabio:hasDiscipline dbpedia:Biomechanic .
 
 #GIBSON
 :L_J_Gibson a foaf:Person ;
-    foaf:firstName "Lorna J.";
-    foaf:familyName "Gibson";
-    foaf:mbox "ljgibson@mit.edu";
-    org:memberOf :MSE_MIT.
+  foaf:firstName "Lorna J.";
+  foaf:familyName "Gibson";
+  foaf:mbox "ljgibson@mit.edu";
+  org:memberOf :MSE_MIT.
 
 #MIT
 :MSE_MIT a foaf:Organization ;
-    foaf:name "Department of Materials Science and Engineering, Massachusetts Institute of Technology";
-    dbo:affiliation dbpedia:Massachusetts_Institute_of_Technology;
-    foaf:member :L_J_Gibson.
+  foaf:name "Department of Materials Science and Engineering, Massachusetts Institute of Technology";
+  dbo:affiliation dbpedia:Massachusetts_Institute_of_Technology;
+  foaf:member :L_J_Gibson.
+
+:ZSL a foaf:Organization;
+  skos:sameAs <http://sv.dbpedia.org/page/Zoological_Society_of_London>;
+  foaf:name "The Zoological Society of London".
+
 #JOURNAL_OF_ZOOLOGY
-:Journal_of_Zoology_207 a fabio:JournalIssue.
+:Journal_of_Zoology_207 a fabio:JournalIssue;
+  dcterms:publisher :ZSL.
 # I can't understand exactly the string "Journal of Zoology 270 (2006) 462–465 c 2006 The Author. Journal compilation c 2006 The Zoological Society of London"
 
 #FRONT MATTER: preliminary matter
