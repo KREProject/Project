@@ -16,6 +16,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix cito: <http://purl.org/spar/cito/2018-02-16> .
+@prefix sake: <https://sakedhdk.github.io/sake#> .
 
 # DOI is the URI
 <doi:10.1111/j.1469-7998.2006.00166.x> 
