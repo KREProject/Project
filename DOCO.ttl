@@ -441,17 +441,17 @@ figure1: dc:description "Figure 1 Tolerance curves for human and acorn woodpecke
 :bibliography_1
   a biro:BibliographicReference;
   dcterms:bibliographicCitation "Bock, W.J. (1964). Kinetics of the avian skull. J. Morph. 114, 1–42.";
-  biro:references <https://doi.org/10.1002/jmor.1051140102>
+  biro:references <https://doi.org/10.1002/jmor.1051140102> .
 
 :bibliography_2
   a biro:BibliographicReference;
   dcterms:bibliographicCitation "Bock, W.J. (1966). An approach to the functional analysis of bill shape. Auk 83, 10–51.";
-  biro:references <https://www.jstor.org/stable/4082976>
+  biro:references <https://www.jstor.org/stable/4082976> .
 
 :bibliography_3
   a biro:BibliographicReference;
   dcterms:bibliographicCitation "Bock, W.J. (1999a). Functional and evolutionary morphology of woodpeckers. Ostrich 70, 23–31.";
-  biro:references <https://doi.org/10.1080/00306525.1999.9639746>
+  biro:references <https://doi.org/10.1080/00306525.1999.9639746> .
 
 :bibliography_4
   a biro:BibliographicReference;
